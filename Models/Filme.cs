@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ArthurTavares.Models
 {
@@ -7,6 +8,9 @@ namespace ArthurTavares.Models
         public int Id_filme { get; set; }
         public string Titulo_filme { get; set; }
         public string Descricao_filme { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateOnly Lancamento_filme { get; set; }
 
 

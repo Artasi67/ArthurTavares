@@ -1,0 +1,28 @@
+﻿@model ArthurTavares.Models.Filme
+
+@{
+    ViewData["Title"] = "Cadastrar Filme";
+}
+
+<h2>Cadastrar Filme</h2>
+
+<form asp-action="Salvar" method="post">
+
+    <div class="form-group">
+        <label for="Titulo_filme">Título</label>
+        <input asp-for="Titulo_filme" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Descricao_filme">Descrição</label>
+        <textarea asp-for="Descricao_filme" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Lancamento_filme">Lançamento</label>
+        <input asp-for="Lancamento_filme" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success mt-2">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Cancelar</a>
+</form>
