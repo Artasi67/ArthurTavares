@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ArthurTavares.Models.Filme>
+
+@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<h2>Filmes Cadastrados</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Data de Lançamento</th>
+            <th>Usuário</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Titulo_filme</td>
+                <td>@item.Lancamento_filme.ToString("dd/MM/yyyy")</td>
+                <td>@item.Usuario?.Nome_usuario</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id_filme" class="btn btn-warning btn-sm">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
