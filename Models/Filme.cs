@@ -5,6 +5,7 @@ namespace ArthurTavares.Models
 {
     public class Filme
     {
+        [Key]
         public int Id_filme { get; set; }
         public string Titulo_filme { get; set; }
         public string Descricao_filme { get; set; }
